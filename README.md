@@ -12,7 +12,6 @@ from convert import load_packed
 path = hf_hub_download("wzhan24/ReGDiff_MetaTruss_10k", "ReGDiff_MetaTruss_10k.npz", repo_type="dataset")
 ini_data = load_packed(path)  # uint8, shape (10000, 48, 48, 48), values in {0, 1}
 ```
-`main.ipynb` already loads the data this way. It converts the cubes to float64 with `.astype(np.float64)`, because the negative-sample augmentation writes Gaussian noise into them. `huggingface_hub` can be installed with `pip install huggingface_hub`.
 
 ## Implementation Details
 ### Model Architecture
